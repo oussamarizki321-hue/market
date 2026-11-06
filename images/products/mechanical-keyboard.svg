@@ -1,0 +1,54 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="80%" stop-color="#F2F3F8"/><stop offset="100%" stop-color="#E0E3EB"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.2"/></filter>
+    <linearGradient id="rgbGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF007A"/><stop offset="30%" stop-color="#7B00FF"/><stop offset="70%" stop-color="#00F0FF"/><stop offset="100%" stop-color="#00FF88"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(30, 30)"><rect width="90" height="26" rx="4" fill="#E60000"/><text x="45" y="18" fill="#FFF" font-family="Arial" font-weight="900" font-size="13" text-anchor="middle">Choice</text></g>
+  <g transform="translate(420, 30)"><rect width="150" height="26" rx="13" fill="#EEF2F6" stroke="#D0D7DE"/><text x="495" y="17" fill="#24292F" font-family="Arial" font-weight="700" font-size="11" text-anchor="middle">75% Gasket â€¢ TFT Screen</text></g>
+  <ellipse cx="300" cy="460" rx="220" ry="24" fill="#000" opacity="0.14" filter="blur(8px)"/>
+  <!-- Keyboard Chassis -->
+  <g filter="url(#shadow)" transform="translate(70, 160)">
+    <!-- Base Frame with RGB Underglow -->
+    <rect x="-8" y="-8" width="476" height="266" rx="24" fill="url(#rgbGrad)" opacity="0.75" filter="blur(6px)"/>
+    <rect x="0" y="0" width="460" height="250" rx="18" fill="#181B20" stroke="#2B303A" stroke-width="2"/>
+    <!-- Rotary Metal Knob & TFT Screen -->
+    <g transform="translate(370, 20)">
+      <!-- TFT Screen -->
+      <rect x="0" y="0" width="70" height="36" rx="6" fill="#0A0C0E" stroke="#3A404D"/>
+      <text x="35" y="18" fill="#00F0FF" font-family="monospace" font-weight="bold" font-size="11" text-anchor="middle">98% ðŸ”‹</text>
+      <text x="35" y="30" fill="#FF007A" font-family="monospace" font-size="9" text-anchor="middle">RGB: ON</text>
+    </g>
+    <!-- Metal Volume Knob -->
+    <circle cx="340" cy="38" r="14" fill="#4B5260" stroke="#717B8D" stroke-width="2"/>
+    <circle cx="340" cy="38" r="7" fill="#252A33"/>
+    <!-- Keycaps Matrix -->
+    <!-- Function Row -->
+    <g transform="translate(20, 20)">
+      <rect x="0" y="0" width="22" height="22" rx="4" fill="#FF5252"/><rect x="28" y="0" width="22" height="22" rx="4" fill="#2E3440"/><rect x="56" y="0" width="22" height="22" rx="4" fill="#2E3440"/><rect x="84" y="0" width="22" height="22" rx="4" fill="#2E3440"/><rect x="112" y="0" width="22" height="22" rx="4" fill="#2E3440"/><rect x="140" y="0" width="22" height="22" rx="4" fill="#4C566A"/><rect x="168" y="0" width="22" height="22" rx="4" fill="#4C566A"/><rect x="196" y="0" width="22" height="22" rx="4" fill="#4C566A"/><rect x="224" y="0" width="22" height="22" rx="4" fill="#4C566A"/><rect x="252" y="0" width="22" height="22" rx="4" fill="#2E3440"/><rect x="280" y="0" width="22" height="22" rx="4" fill="#FF5252"/>
+    </g>
+    <!-- Number Row -->
+    <g transform="translate(20, 52)">
+      <rect x="0" y="0" width="24" height="28" rx="4" fill="#3B4252"/><rect x="30" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="60" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="90" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="120" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="150" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="180" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="210" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="240" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="270" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="300" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="330" y="0" width="24" height="28" rx="4" fill="#E5E9F0"/><rect x="360" y="0" width="46" height="28" rx="4" fill="#88C0D0"/><rect x="414" y="0" width="26" height="28" rx="4" fill="#5E81AC"/>
+    </g>
+    <!-- QWERTY Row -->
+    <g transform="translate(20, 88)">
+      <rect x="0" y="0" width="38" height="28" rx="4" fill="#88C0D0"/><rect x="44" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="74" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="104" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="134" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="164" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="194" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="224" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="254" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="284" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="314" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="344" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="374" y="0" width="32" height="28" rx="4" fill="#88C0D0"/><rect x="414" y="0" width="26" height="28" rx="4" fill="#5E81AC"/>
+    </g>
+    <!-- ASDF Row -->
+    <g transform="translate(20, 124)">
+      <rect x="0" y="0" width="46" height="28" rx="4" fill="#88C0D0"/><rect x="52" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="82" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="112" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="142" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="172" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="202" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="232" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="262" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="292" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="322" y="0" width="24" height="28" rx="4" fill="#ECEFF4"/><rect x="352" y="0" width="54" height="28" rx="4" fill="#81A1C1"/><rect x="414" y="0" width="26" height="28" rx="4" fill="#5E81AC"/>
+    </g>
+    <!-- Bottom Spacebar Row -->
+    <g transform="translate(20, 160)">
+      <rect x="0" y="0" width="58" height="30" rx="4" fill="#5E81AC"/><rect x="64" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="94" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="124" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="154" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="184" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="214" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="244" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="274" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="304" y="0" width="24" height="30" rx="4" fill="#ECEFF4"/><rect x="334" y="0" width="50" height="30" rx="4" fill="#5E81AC"/><rect x="390" y="0" width="22" height="30" rx="4" fill="#FF5252"/>
+    </g>
+    <!-- Spacebar Bar -->
+    <g transform="translate(130, 200)">
+      <rect x="0" y="0" width="180" height="34" rx="6" fill="#88C0D0" stroke="#5E81AC"/>
+    </g>
+  </g>
+</svg>

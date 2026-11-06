@@ -1,0 +1,31 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="80%" stop-color="#F2F5F8"/><stop offset="100%" stop-color="#E2E7ED"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.18"/></filter>
+    <linearGradient id="jacketGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#213242"/><stop offset="100%" stop-color="#141E28"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(30, 30)"><rect width="90" height="26" rx="4" fill="#E60000"/><text x="45" y="18" fill="#FFF" font-family="Arial" font-weight="900" font-size="13" text-anchor="middle">Choice</text></g>
+  <g transform="translate(420, 30)"><rect width="150" height="26" rx="13" fill="#EEF2F6" stroke="#D0D7DE"/><text x="495" y="17" fill="#24292F" font-family="Arial" font-weight="700" font-size="11" text-anchor="middle">Waterproof â€¢ Windproof</text></g>
+  <ellipse cx="300" cy="510" rx="170" ry="24" fill="#000" opacity="0.14" filter="blur(8px)"/>
+  <g filter="url(#shadow)" transform="translate(140, 110)">
+    <!-- Hood -->
+    <path d="M 110 50 Q 160 10 210 50 L 195 100 Q 160 80 125 100 Z" fill="#1C2A38"/>
+    <!-- Torso and Sleeves -->
+    <!-- Left Sleeve -->
+    <path d="M 80 80 L 10 260 L 60 280 L 105 130 Z" fill="url(#jacketGrad)"/>
+    <!-- Right Sleeve -->
+    <path d="M 240 80 L 310 260 L 260 280 L 215 130 Z" fill="url(#jacketGrad)"/>
+    <!-- Body -->
+    <path d="M 90 80 Q 160 90 230 80 L 250 350 L 70 350 Z" fill="url(#jacketGrad)"/>
+    <!-- Water-repellent Neon Zipper -->
+    <line x1="160" y1="85" x2="160" y2="350" stroke="#FF5722" stroke-width="5"/>
+    <!-- Chest Zippered Pocket -->
+    <line x1="180" y1="140" x2="220" y2="155" stroke="#FF5722" stroke-width="3"/>
+    <!-- Water Droplets Beading Effect -->
+    <circle cx="120" cy="180" r="4" fill="#00F0FF" opacity="0.8"/>
+    <circle cx="130" cy="195" r="5" fill="#00F0FF" opacity="0.9"/>
+    <circle cx="195" cy="220" r="4" fill="#00F0FF" opacity="0.8"/>
+    <circle cx="140" cy="270" r="6" fill="#00F0FF" opacity="0.9"/>
+  </g>
+</svg>

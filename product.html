@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل المنتج | AliMarket منصة عروض علي إكسبرس</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF4747'/><text x='50%' y='68%' font-size='65' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'>Ali</text></svg>">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body class="rtl">
+
+  <!-- TOP DISCLOSURE & UTILITY BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-notice">
+        <span class="badge-affiliate">إفصاح الشفافية</span>
+        <span data-i18n="affiliate_disclosure_short">إفصاح الشفافية التسويقية: قد نحصل على عمولة رسمية عند إتمام الشراء عبر علي إكسبرس دون أي تكلفة إضافية عليك.</span>
+        <a href="privacy-affiliate-disclosure.html" class="top-bar-link" data-i18n="learn_more">تعرف على المزيد</a>
+      </div>
+
+      <div class="top-bar-right">
+        <a href="admin.html" class="admin-link-btn" title="لوحة التحكم">
+          <i class="bi bi-shield-lock-fill"></i>
+          <span data-i18n="admin_access">لوحة التحكم</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main-row">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo-wrap">
+          <div class="brand-logo-text">
+            <div class="brand-logo-title">
+              Ali<span class="hub">Market</span>
+            </div>
+            <span class="brand-badge-affiliate">شريك علي إكسبرس المعتمد</span>
+          </div>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="header-search-wrap">
+          <div class="search-box">
+            <input 
+              type="text" 
+              class="search-input" 
+              id="main-search-input" 
+              placeholder="ابحث في آلاف منتجات وعروض علي إكسبرس الحصرية..." 
+              autocomplete="off"
+              data-i18n="search_placeholder"
+            />
+            <button class="search-btn" onclick="window.location.href='index.html'" aria-label="بحث">
+              <i class="bi bi-search"></i>
+              <span data-i18n="search_btn">بحث</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <a href="index.html" class="header-action-item">
+            <i class="bi bi-house-door"></i>
+            <span data-i18n="home_crumb">الرئيسية</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCT DETAIL SECTION -->
+  <main class="product-detail-section">
+    <div class="container" id="product-detail-container">
+      <!-- Dynamically populated via ProductPage.renderProductDetails() -->
+      <div style="padding: 60px 0; text-align: center; color: #888;">
+        جاري تحميل تفاصيل المنتج ومواصفات علي إكسبرس...
+      </div>
+    </div>
+
+    <!-- SIMILAR ALIEXPRESS CHOICE PRODUCTS -->
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon-badge"><i class="bi bi-stars"></i></div>
+          <div>
+            <h2 class="section-title" data-i18n="similar_products">منتجات مشابهة قد تنال إعجابك</h2>
+            <p class="section-subtitle">أفضل مختارات Choice الرائجة بروابط إحالة رسمية وأسعار حصرية</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid" id="similar-products-grid">
+        <!-- Dynamically populated via ProductPage.renderSimilarProducts() -->
+      </div>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo-title" style="margin-bottom: 12px; font-size: 20px;">
+            Ali<span style="color: #FFF;">Market</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.6; margin-bottom: 16px;" data-i18n="about_text">
+            منصة تسوق وإحالة تسويقية مستقلة متخصصة في اكتشاف أفضل المنتجات والعروض الحصرية ومختارات Choice مباشرة من موقع علي إكسبرس. نحن لا نملك مخزوناً ولا نقوم بمعالجة الطلبات أو الدفع - عملية الشراء الآمنة تتم بالكامل على موقع AliExpress الرسمي.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title" data-i18n="quick_links">أقسام المنتجات</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">جميع الأقسام</a></li>
+            <li><a href="index.html">أقوى العروض SuperDeals</a></li>
+            <li><a href="index.html">مختارات Choice</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title" data-i18n="legal_title">الشفافية والمصداقية</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy-affiliate-disclosure.html" data-i18n="terms_disclosure">إخلاء المسؤولية وسياسة الإحالة</a></li>
+            <li><a href="privacy-affiliate-disclosure.html#privacy" data-i18n="privacy_policy">سياسة الخصوصية</a></li>
+            <li><a href="admin.html" data-i18n="admin_access">لوحة تحكم المسؤول</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">ضمان حماية المشتري</h4>
+          <p style="font-size: 12.5px; line-height: 1.6; color: #888;">
+            جميع المشتريات مشمولة بضمان حماية المشتري الرسمي لمدة 75 يوماً من علي إكسبرس مع استرداد كامل للأموال.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="copyright">
+          © 2026 AliMarket Global. جميع العلامات التجارية وأسماء المنتجات هي ملك لشركة Alibaba Group. جميع الحقوق محفوظة.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/importer.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

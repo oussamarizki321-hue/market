@@ -1,0 +1,24 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="80%" stop-color="#F2F5F8"/><stop offset="100%" stop-color="#DCE4EC"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.18"/></filter>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(30, 30)"><rect width="90" height="26" rx="4" fill="#E60000"/><text x="45" y="18" fill="#FFF" font-family="Arial" font-weight="900" font-size="13" text-anchor="middle">Choice</text></g>
+  <g transform="translate(420, 30)"><rect width="150" height="26" rx="13" fill="#E0F2F1" stroke="#80CBC4"/><text x="495" y="17" fill="#004D40" font-family="Arial" font-weight="700" font-size="11" text-anchor="middle">Bluetooth â€¢ Inkless Thermal</text></g>
+  <ellipse cx="300" cy="490" rx="140" ry="22" fill="#000" opacity="0.14" filter="blur(8px)"/>
+  <g filter="url(#shadow)" transform="translate(190, 140)">
+    <!-- Compact Handheld Printer Body -->
+    <rect x="0" y="0" width="220" height="310" rx="36" fill="#FFFFFF" stroke="#CFD8DC" stroke-width="2"/>
+    <!-- Label Dispenser Slot at Top -->
+    <rect x="40" y="30" width="140" height="14" rx="4" fill="#37474F"/>
+    <!-- Dispensed Printed Label Rolling Out -->
+    <rect x="55" y="-30" width="110" height="65" rx="4" fill="#FFF9C4" stroke="#FBC02D"/>
+    <text x="110" y="0" fill="#212121" font-family="monospace" font-weight="bold" font-size="14" text-anchor="middle">OFFICE #01</text>
+    <!-- Circular Power / Print Button with Ring -->
+    <circle cx="110" cy="180" r="32" fill="#ECEFF1" stroke="#00B0FF" stroke-width="3"/>
+    <circle cx="110" cy="180" r="14" fill="#00B0FF"/>
+    <!-- Brand -->
+    <text x="110" y="270" fill="#90A4AE" font-family="Arial" font-weight="900" font-size="14" letter-spacing="3" text-anchor="middle">NIIMBOT</text>
+  </g>
+</svg>

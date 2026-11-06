@@ -1,0 +1,24 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="80%" stop-color="#F2F4F7"/><stop offset="100%" stop-color="#DCE2EC"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.18"/></filter>
+    <linearGradient id="vacBody" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#37474F"/><stop offset="100%" stop-color="#212121"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(30, 30)"><rect width="90" height="26" rx="4" fill="#E60000"/><text x="45" y="18" fill="#FFF" font-family="Arial" font-weight="900" font-size="13" text-anchor="middle">Choice</text></g>
+  <g transform="translate(420, 30)"><rect width="150" height="26" rx="13" fill="#ECEFF1" stroke="#B0BEC5"/><text x="495" y="17" fill="#263238" font-family="Arial" font-weight="700" font-size="11" text-anchor="middle">6000Pa Strong â€¢ Cordless</text></g>
+  <ellipse cx="300" cy="480" rx="170" ry="22" fill="#000" opacity="0.14" filter="blur(8px)"/>
+  <g filter="url(#shadow)" transform="translate(100, 220)">
+    <!-- Slender Metallic Cylindrical Body -->
+    <rect x="140" y="30" width="230" height="70" rx="35" fill="url(#vacBody)" stroke="#546E7A" stroke-width="2"/>
+    <!-- Clear Dust Bin Front -->
+    <path d="M 140 35 L 70 50 L 70 80 L 140 95 Z" fill="#90A4AE" opacity="0.7"/>
+    <!-- Suction Nozzle Tip -->
+    <path d="M 70 52 L 20 58 L 20 72 L 70 78 Z" fill="#263238"/>
+    <!-- Power Button & Battery LED -->
+    <circle cx="260" cy="65" r="14" fill="#455A64" stroke="#00E5FF" stroke-width="2"/>
+    <circle cx="260" cy="65" r="5" fill="#00E5FF"/>
+    <!-- Brand -->
+    <text x="320" y="70" fill="#B0BEC5" font-family="Arial" font-weight="900" font-size="12" letter-spacing="2">BASEUS</text>
+  </g>
+</svg>

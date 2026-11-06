@@ -1,0 +1,36 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="80%" stop-color="#F2F4F8"/><stop offset="100%" stop-color="#DFE4EC"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#000" flood-opacity="0.2"/></filter>
+    <linearGradient id="strap" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2D3238"/><stop offset="100%" stop-color="#181B1E"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(30, 30)"><rect width="90" height="26" rx="4" fill="#E60000"/><text x="45" y="18" fill="#FFF" font-family="Arial" font-weight="900" font-size="13" text-anchor="middle">Choice</text></g>
+  <g transform="translate(420, 30)"><rect width="150" height="26" rx="13" fill="#EEF2F6" stroke="#D0D7DE"/><text x="495" y="17" fill="#24292F" font-family="Arial" font-weight="700" font-size="11" text-anchor="middle">1.9" HD Screen â€¢ BT Calling</text></g>
+  <ellipse cx="300" cy="520" rx="140" ry="20" fill="#000" opacity="0.14" filter="blur(8px)"/>
+  <g filter="url(#shadow)" transform="translate(190, 80)">
+    <!-- Silicone Straps -->
+    <rect x="40" y="0" width="140" height="120" rx="12" fill="url(#strap)"/>
+    <rect x="40" y="320" width="140" height="120" rx="12" fill="url(#strap)"/>
+    <!-- Smartwatch Metallic Body -->
+    <rect x="15" y="100" width="190" height="240" rx="36" fill="#1C1F24" stroke="#3A404A" stroke-width="3"/>
+    <!-- Side Button / Rotary Crown -->
+    <rect x="207" y="180" width="12" height="40" rx="4" fill="#586170"/>
+    <!-- AMOLED Color Display Area -->
+    <rect x="28" y="113" width="164" height="214" rx="26" fill="#050709"/>
+    <!-- Watch Face Digital UI -->
+    <text x="110" y="175" fill="#FFFFFF" font-family="Arial Black, Impact" font-weight="900" font-size="44" text-anchor="middle">10:42</text>
+    <text x="110" y="200" fill="#00F0FF" font-family="Arial" font-weight="bold" font-size="13" text-anchor="middle">WED, NOV 02</text>
+    <!-- Heart Rate & Steps Stats -->
+    <g transform="translate(45, 225)">
+      <circle cx="15" cy="15" r="14" fill="#FF1744" opacity="0.2"/>
+      <text x="15" y="20" fill="#FF1744" font-family="Arial" font-size="14" text-anchor="middle">â¤ï¸</text>
+      <text x="35" y="20" fill="#FFF" font-family="Arial" font-weight="bold" font-size="13">78 bpm</text>
+    </g>
+    <g transform="translate(45, 265)">
+      <circle cx="15" cy="15" r="14" fill="#00E676" opacity="0.2"/>
+      <text x="15" y="20" fill="#00E676" font-family="Arial" font-size="14" text-anchor="middle">ðŸ‘Ÿ</text>
+      <text x="35" y="20" fill="#FFF" font-family="Arial" font-weight="bold" font-size="13">8,420 steps</text>
+    </g>
+  </g>
+</svg>

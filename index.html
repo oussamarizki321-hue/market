@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="اكتشف أقوى عروض وتخفيضات علي إكسبرس ومختارات تشويس Choice المعتمدة للأجهزة الذكية والإلكترونيات والموضة والمنزل مع روابط إحالة رسمية.">
+  <title>AliMarket | البوابة الرسمية لتسوق عروض ومختارات علي إكسبرس AliExpress</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF4747'/><text x='50%' y='68%' font-size='65' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'>Ali</text></svg>">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body class="rtl">
+
+  <!-- TOP DISCLOSURE & UTILITY BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-notice">
+        <span class="badge-affiliate">إفصاح الشفافية</span>
+        <span data-i18n="affiliate_disclosure_short">إفصاح الشفافية التسويقية: قد نحصل على عمولة رسمية عند إتمام الشراء عبر علي إكسبرس دون أي تكلفة إضافية عليك.</span>
+        <a href="privacy-affiliate-disclosure.html" class="top-bar-link" data-i18n="learn_more">تعرف على المزيد</a>
+      </div>
+
+      <div class="top-bar-right">
+        <!-- Admin Shortcut -->
+        <a href="admin.html" class="admin-link-btn" title="لوحة تحكم المسؤول">
+          <i class="bi bi-shield-lock-fill"></i>
+          <span data-i18n="admin_access">لوحة التحكم</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-main-row">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo-wrap">
+          <div class="brand-logo-text">
+            <div class="brand-logo-title">
+              Ali<span class="hub">Market</span>
+            </div>
+            <span class="brand-badge-affiliate">شريك علي إكسبرس المعتمد</span>
+          </div>
+        </a>
+
+        <!-- Live Search Bar -->
+        <div class="header-search-wrap">
+          <div class="search-box">
+            <select class="search-category-select" id="search-category-select">
+              <option value="all">جميع الأقسام</option>
+            </select>
+            <input 
+              type="text" 
+              class="search-input" 
+              id="main-search-input" 
+              placeholder="ابحث في آلاف منتجات وعروض علي إكسبرس الحصرية..." 
+              autocomplete="off"
+              data-i18n="search_placeholder"
+            />
+            <button class="search-btn" id="main-search-btn" aria-label="بحث">
+              <i class="bi bi-search"></i>
+              <span data-i18n="search_btn">بحث</span>
+            </button>
+          </div>
+
+          <!-- Autocomplete Dropdown -->
+          <div class="search-dropdown" id="search-dropdown-menu"></div>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <div class="header-action-item" id="header-wishlist-btn" title="قائمة المفضلة">
+            <i class="bi bi-heart"></i>
+            <span class="badge-counter" id="header-wishlist-count" style="display: none;">0</span>
+            <span data-i18n="wishlist">المفضلة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUB NAVIGATION BAR -->
+    <nav class="nav-subbar">
+      <div class="container">
+        <div class="nav-subbar-row">
+          <div class="nav-links-wrap">
+            <button class="all-categories-trigger" id="btn-all-categories">
+              <i class="bi bi-list"></i>
+              <span data-i18n="all_categories">جميع الأقسام</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+
+            <span class="nav-link nav-link-choice" onclick="App.selectCategory('all')">
+              <i class="bi bi-patch-check-fill"></i>
+              <span data-i18n="aliexpress_choice">مختارات Choice المعتمدة</span>
+              <span class="nav-badge-pill">Hot</span>
+            </span>
+
+            <span class="nav-link" onclick="App.selectCategory('electronics')">
+              <i class="bi bi-lightning-charge-fill text-warning"></i>
+              <span data-i18n="super_deals">أقوى العروض SuperDeals</span>
+            </span>
+
+            <span class="nav-link" onclick="App.selectCategory('watches')">
+              <span data-i18n="flash_sales">عروض البرق الفورية</span>
+            </span>
+          </div>
+
+          <div class="guarantee-pill">
+            <i class="bi bi-shield-check"></i>
+            <span data-i18n="buyer_protection">حماية المشتري المعتمدة من علي إكسبرس</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Mega Category Menu Sidebar -->
+        <aside class="category-sidebar">
+          <div class="category-sidebar-header" data-i18n="categories_menu">أقسام المنتجات</div>
+          <ul class="category-menu-list" id="category-sidebar-list">
+            <!-- Dynamically populated -->
+          </ul>
+        </aside>
+
+        <!-- Promotional Slider Carousel -->
+        <div class="hero-slider-wrap" id="hero-slider-wrap">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Side Flash Deal Card -->
+        <div class="hero-side-card">
+          <div class="hero-side-header">
+            <div class="hero-side-title" data-i18n="super_deals">أقوى العروض SuperDeals</div>
+            <div style="font-size: 11px; color: #666;" data-i18n="ends_in">ينتهي العرض خلال</div>
+            <div class="hero-side-timer">
+              <span class="timer-box" id="timer-hours">14</span> :
+              <span class="timer-box" id="timer-mins">42</span> :
+              <span class="timer-box" id="timer-secs">19</span>
+            </div>
+          </div>
+
+          <div class="hero-side-deal-item" onclick="window.location.href='product.html?id=ali-elec-101'">
+            <img src="images/products/lenovo-earbuds.svg" alt="سماعات لينوفو ثينك بلس الأصلية" class="hero-side-deal-img" />
+            <div style="font-size: 12px; font-weight: 600; color: #222; margin-bottom: 4px;">سماعات لينوفو اللاسلكية Thinkplus</div>
+            <div class="hero-side-deal-price">$11.49</div>
+            <div class="hero-side-deal-save">وفر 60% اليوم</div>
+          </div>
+
+          <button class="btn-choice-explore" onclick="App.selectCategory('all')">
+            <span data-i18n="explore_deals">استكشف العروض</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY CHIPS SCROLLER -->
+  <div class="container">
+    <div class="category-chips-row" id="category-chips-row">
+      <!-- Dynamically populated -->
+    </div>
+  </div>
+
+  <!-- AFFILIATE TRUST BANNER -->
+  <div class="container">
+    <div class="affiliate-trust-card">
+      <i class="bi bi-info-circle-fill affiliate-trust-icon"></i>
+      <div class="affiliate-trust-text">
+        <strong>منصة تسوق وإحالة تسويقية رسمية معتمدة:</strong>
+        <span class="site-disclosure-text">
+          تصفح أفضل منتجات وعروض علي إكسبرس الموثوقة. عند الضغط على "الشراء من علي إكسبرس"، يتم تحويلك بأمان ومباشرة إلى صفحة المنتج الأصلية لدى البائع المعتمد. نحن لا نستلم أموالاً ولا نتولى الشحن؛ فطلبك ودفعك وحمايتك تدار بالكامل وبشكل مضمون بنسبة 100% عبر موقع وتطبيق AliExpress الرسمي.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN SHOPPING SECTION (FILTERS & PRODUCT GRID) -->
+  <main class="container" id="products-container">
+    <div class="main-shop-layout">
+      <!-- FILTERS SIDEBAR -->
+      <aside class="shop-filters-sidebar">
+        <h3 class="filter-title" data-i18n="filters">تصفية المنتجات</h3>
+
+        <!-- Filter: Free Shipping -->
+        <div class="filter-group">
+          <label class="filter-checkbox-item">
+            <input type="checkbox" id="filter-free-shipping" />
+            <span data-i18n="free_shipping_only">شحن مجاني فقط</span>
+          </label>
+          <label class="filter-checkbox-item">
+            <input type="checkbox" id="filter-choice-only" />
+            <span data-i18n="choice_only">منتجات Choice المعتمدة فقط</span>
+          </label>
+        </div>
+
+        <!-- Filter: Price Range -->
+        <div class="filter-group">
+          <div class="filter-title" data-i18n="price_range">نطاق السعر ($)</div>
+          <div class="price-inputs-row">
+            <input type="number" id="filter-min-price" class="price-input" placeholder="الحد الأدنى $" min="0" />
+            <span>-</span>
+            <input type="number" id="filter-max-price" class="price-input" placeholder="الحد الأقصى $" min="0" />
+          </div>
+        </div>
+
+        <!-- Filter: Rating -->
+        <div class="filter-group">
+          <div class="filter-title" data-i18n="rating_filter">تقييم المشترين</div>
+          <select id="filter-min-rating" class="sort-select" style="width: 100%;">
+            <option value="0">كافة التقييمات</option>
+            <option value="4.8">4.8 نجوم فما فوق ★★★★★</option>
+            <option value="4.5">4.5 نجوم فما فوق ★★★★☆</option>
+            <option value="4.0">4.0 نجوم فما فوق ★★★★☆</option>
+          </select>
+        </div>
+
+        <button class="btn-filter-apply" id="btn-apply-filter" data-i18n="apply_filter">تطبيق الفلتر</button>
+        <button class="btn-filter-clear" id="btn-clear-filter" data-i18n="clear_all">مسح الفلاتر</button>
+      </aside>
+
+      <!-- PRODUCTS CONTENT AREA -->
+      <section>
+        <!-- TOOLBAR: COUNT & SORT -->
+        <div class="product-toolbar">
+          <div class="results-count-text" id="results-count">
+            جاري تحميل المنتجات...
+          </div>
+
+          <div class="sort-wrapper">
+            <label for="product-sort-select" data-i18n="sort_by">ترتيب حسب:</label>
+            <select id="product-sort-select" class="sort-select">
+              <option value="popular" data-i18n="sort_popular">الأكثر شعبية ومبيعاً</option>
+              <option value="price-low" data-i18n="sort_price_low">السعر: من الأقل للأعلى</option>
+              <option value="price-high" data-i18n="sort_price_high">السعر: من الأعلى للأقل</option>
+              <option value="rating" data-i18n="sort_rating">الأعلى تقييماً</option>
+              <option value="discount" data-i18n="sort_discount">أعلى نسبة خصم</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- DYNAMIC PRODUCT GRID -->
+        <div class="product-grid" id="products-grid">
+          <!-- Dynamically populated via App.renderProducts() -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo-title" style="margin-bottom: 12px; font-size: 20px;">
+            Ali<span style="color: #FFF;">Market</span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.6; margin-bottom: 16px;" data-i18n="about_text">
+            منصة تسوق وإحالة تسويقية مستقلة متخصصة في اكتشاف أفضل المنتجات والعروض الحصرية ومختارات Choice مباشرة من موقع علي إكسبرس. نحن لا نملك مخزوناً ولا نقوم بمعالجة الطلبات أو الدفع - عملية الشراء الآمنة تتم بالكامل على موقع AliExpress الرسمي.
+          </p>
+          <div class="footer-badges-row">
+            <span class="footer-badge-pill"><i class="bi bi-patch-check"></i> AliExpress Choice</span>
+            <span class="footer-badge-pill"><i class="bi bi-shield-check"></i> ضمان 75 يوماً</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title" data-i18n="quick_links">أقسام المنتجات</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" onclick="App.selectCategory('electronics')">الإلكترونيات والملحقات</a></li>
+            <li><a href="index.html" onclick="App.selectCategory('smartphones')">الهواتف الذكية والملحقات</a></li>
+            <li><a href="index.html" onclick="App.selectCategory('fashion')">الموضة والملابس</a></li>
+            <li><a href="index.html" onclick="App.selectCategory('watches')">الساعات الفاخرة والذكية</a></li>
+            <li><a href="index.html" onclick="App.selectCategory('home')">المنزل والمطبخ الذكي</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title" data-i18n="legal_title">الشفافية والمصداقية</h4>
+          <ul class="footer-links-list">
+            <li><a href="privacy-affiliate-disclosure.html" data-i18n="terms_disclosure">إخلاء المسؤولية وسياسة الإحالة</a></li>
+            <li><a href="privacy-affiliate-disclosure.html#privacy" data-i18n="privacy_policy">سياسة الخصوصية</a></li>
+            <li><a href="admin.html" data-i18n="admin_access">لوحة تحكم المسؤول</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">ضمان حماية المشتري من AliExpress</h4>
+          <p style="font-size: 12.5px; line-height: 1.6; color: #888;">
+            كافة المشتريات التي تتم عبر روابط الإحالة الخاصة بنا محمية بالكامل بموجب سياسة حماية المشتري الرسمية من AliExpress، مع ضمان استرداد كامل للأموال عند عدم استلام الشحنة أو عدم مطابقتها للوصف.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="copyright">
+          © 2026 AliMarket Global. جميع العلامات التجارية وأسماء المنتجات هي ملك لشركة Alibaba Group. جميع الحقوق محفوظة.
+        </div>
+        <div style="color: #666;">
+          بوابة التسوق الذكي والإحالة التسويقية المعتمدة
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/importer.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

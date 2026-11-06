@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | AliExpress Affiliate Marketplace Portal</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23191919'/><text x='50%' y='68%' font-size='60' font-weight='900' fill='%23FF4747' text-anchor='middle' font-family='sans-serif'>ADM</text></svg>">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body class="admin-body">
+
+  <!-- SECURE PIN AUTHENTICATION OVERLAY -->
+  <div class="admin-login-overlay" id="admin-login-overlay">
+    <div class="admin-login-card">
+      <div class="admin-login-logo">
+        Ali<span style="color: #111;">Admin</span>
+      </div>
+      <p class="admin-login-subtitle">Enter your Administrator Password or PIN to manage your AliExpress Affiliate Catalog.</p>
+
+      <div style="margin-bottom: 16px;">
+        <input 
+          type="password" 
+          id="admin-pin-field" 
+          class="admin-pin-input" 
+          placeholder="••••••••" 
+          maxlength="20"
+          autofocus 
+        />
+        <div id="admin-login-error" style="color: #DC2626; font-size: 12.5px; display: none; margin-top: 6px; font-weight: 600;"></div>
+      </div>
+
+      <button class="btn-admin-login" id="admin-login-submit">
+        <i class="bi bi-shield-check"></i> Access Admin Portal
+      </button>
+
+
+      <div style="margin-top: 20px;">
+        <a href="index.html" style="font-size: 13px; color: #6B7280; text-decoration: underline;">
+          ← Return to Storefront
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD WRAPPER -->
+  <div class="admin-wrapper">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="admin-brand-title">
+          <span>Ali</span>Market Admin
+        </div>
+      </div>
+
+      <ul class="admin-menu">
+        <li class="admin-menu-item">
+          <a class="admin-menu-link active" data-tab="overview">
+            <i class="bi bi-speedometer2"></i>
+            <span>Overview & Stats</span>
+          </a>
+        </li>
+        <li class="admin-menu-item">
+          <a class="admin-menu-link" data-tab="products">
+            <i class="bi bi-box-seam"></i>
+            <span>Products</span>
+          </a>
+        </li>
+        <li class="admin-menu-item">
+          <a class="admin-menu-link" data-tab="categories">
+            <i class="bi bi-grid"></i>
+            <span>Categories</span>
+          </a>
+        </li>
+        <li class="admin-menu-item">
+          <a class="admin-menu-link" data-tab="analytics">
+            <i class="bi bi-graph-up-arrow"></i>
+            <span>Outbound Clicks</span>
+          </a>
+        </li>
+        <li class="admin-menu-item">
+          <a class="admin-menu-link" data-tab="affiliate">
+            <i class="bi bi-link-45deg"></i>
+            <span>Affiliate & Links</span>
+          </a>
+        </li>
+        <li class="admin-menu-item">
+          <a class="admin-menu-link" data-tab="banners">
+            <i class="bi bi-images"></i>
+            <span>Hero Banners</span>
+          </a>
+        </li>
+        <li class="admin-menu-item">
+          <a class="admin-menu-link" data-tab="settings">
+            <i class="bi bi-gear"></i>
+            <span>Site Settings & PIN</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="admin-sidebar-footer">
+        <button class="btn-admin-logout" id="btn-admin-logout">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Log Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN VIEW -->
+    <div class="admin-main">
+      <!-- HEADER -->
+      <header class="admin-header">
+        <h1 class="admin-page-title" id="admin-header-title">Dashboard Overview</h1>
+
+        <div class="admin-header-actions">
+          <!-- Language Switcher in Admin -->
+          <div class="lang-selector" style="margin-right: 8px;">
+            <button class="lang-btn active" data-lang-btn="en">EN</button>
+            <button class="lang-btn" data-lang-btn="fr">FR</button>
+            <button class="lang-btn" data-lang-btn="ar">العربية</button>
+          </div>
+
+          <a href="index.html" target="_blank" class="btn-view-store">
+            <i class="bi bi-shop"></i> View Storefront
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <main class="admin-content">
+
+        <!-- 1. TAB: OVERVIEW -->
+        <div class="admin-tab-content active" id="tab-overview">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon red"><i class="bi bi-box-seam"></i></div>
+              <div class="stat-details">
+                <h4>Total Products</h4>
+                <div class="value" id="stat-total-products">0</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon blue"><i class="bi bi-cursor-fill"></i></div>
+              <div class="stat-details">
+                <h4>Outbound Clicks</h4>
+                <div class="value" id="stat-total-clicks">0</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon green"><i class="bi bi-folder-check"></i></div>
+              <div class="stat-details">
+                <h4>Active Categories</h4>
+                <div class="value" id="stat-active-categories">0</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon orange"><i class="bi bi-arrow-up-right-circle-fill"></i></div>
+              <div class="stat-details">
+                <h4>Tracked Referrals</h4>
+                <div class="value" id="stat-conversion-potential">0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP PERFORMING PRODUCTS -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Top Clicked AliExpress Products</h3>
+              <button class="btn-secondary-admin" onclick="Admin.switchTab('analytics')">
+                <i class="bi bi-eye"></i> View Full Traffic Log
+              </button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Clicks</th>
+                    <th>AliExpress Link</th>
+                  </tr>
+                </thead>
+                <tbody id="overview-top-products-body">
+                  <!-- Populated via Admin.renderOverviewStats() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- AFFILIATE DISCLOSURE NOTICE STATUS -->
+          <div class="admin-card" style="background-color: #F8FAFC; border-color: #E2E8F0;">
+            <div style="display: flex; gap: 14px; align-items: flex-start;">
+              <i class="bi bi-shield-check text-success" style="font-size: 24px;"></i>
+              <div>
+                <h4 style="font-size: 14.5px; font-weight: 700; margin-bottom: 4px;">AliExpress Affiliate Compliance Ready</h4>
+                <p style="font-size: 13px; color: #475569; line-height: 1.5;">
+                  Your store operates 100% in compliance with AliExpress Portals guidelines: products directly redirect to AliExpress using authorized tracking parameters, customer orders and payments are handled exclusively by AliExpress, and FTC affiliate disclosures are displayed on every page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. TAB: PRODUCTS -->
+        <div class="admin-tab-content" id="tab-products">
+          <!-- INSTANT ALIEXPRESS IMPORTER -->
+          <div class="admin-card" style="background: linear-gradient(135deg, #FFF5F5 0%, #FFFFFF 100%); border-color: #FFCDD2; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h3 style="font-size: 15px; font-weight: 800; color: var(--ali-red); display: flex; align-items: center; gap: 8px;">
+                  <i class="bi bi-cloud-arrow-down-fill"></i> AliExpress 1-Click Product Importer
+                </h3>
+                <p style="font-size: 12.5px; color: #666; margin-top: 2px;">
+                  Paste any AliExpress item link or ID to instantly extract, auto-generate specifications, and add it to your catalog with authorized affiliate tracking.
+                </p>
+              </div>
+              <button class="btn-primary-admin" style="background: linear-gradient(135deg, #E62E04, #FF4747);" onclick="Admin.populateViralDeals()">
+                <i class="bi bi-fire"></i> Add Top Viral AliExpress Deals
+              </button>
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <input 
+                type="text" 
+                id="importer-url-input" 
+                class="form-control" 
+                style="flex: 1; min-width: 280px;" 
+                placeholder="Paste AliExpress Link e.g. https://www.aliexpress.com/item/1005006456789.html or Item ID" 
+              />
+              <select id="importer-cat-select" class="form-control" style="width: 200px;">
+                <!-- Populated dynamically -->
+              </select>
+              <button class="btn-primary-admin" onclick="Admin.handleInstantImport()">
+                <i class="bi bi-plus-circle"></i> Import to Store
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div style="display: flex; align-items: center; gap: 12px; flex: 1; max-width: 450px;">
+                <input 
+                  type="text" 
+                  id="admin-prod-search" 
+                  class="form-control" 
+                  placeholder="Filter products by name or category..." 
+                />
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <button class="btn-primary-admin" onclick="Admin.openAddProductModal()">
+                  <i class="bi bi-plus-lg"></i> Add New Product
+                </button>
+              </div>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Product Title & ID</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Clicks</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="products-table-body">
+                  <!-- Populated via Admin.renderProductsTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. TAB: CATEGORIES -->
+        <div class="admin-tab-content" id="tab-categories">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Manage Product Categories</h3>
+              <button class="btn-primary-admin" onclick="Admin.openAddCategoryModal()">
+                <i class="bi bi-plus-lg"></i> Add Category
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Icon</th>
+                    <th>Name (EN)</th>
+                    <th>Name (FR)</th>
+                    <th>Name (AR)</th>
+                    <th>Slug ID</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="categories-table-body">
+                  <!-- Populated via Admin.renderCategoriesTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. TAB: ANALYTICS & CLICKS -->
+        <div class="admin-tab-content" id="tab-analytics">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Outbound Affiliate Traffic Log</h3>
+              <button class="btn-secondary-admin" onclick="Admin.clearClickLogs()">
+                <i class="bi bi-trash"></i> Clear Logs
+              </button>
+            </div>
+            <p style="font-size: 13px; color: #666; margin-bottom: 16px;">
+              Logs every customer click that redirects to AliExpress, capturing product ID, category, timestamp, and referral origin.
+            </p>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Trigger Source</th>
+                    <th>Target Link</th>
+                  </tr>
+                </thead>
+                <tbody id="analytics-clicks-body">
+                  <!-- Populated via Admin.renderAnalyticsTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. TAB: AFFILIATE SETTINGS -->
+        <div class="admin-tab-content" id="tab-affiliate">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">AliExpress Affiliate Program Configuration</h3>
+            </div>
+            <p style="font-size: 13px; color: #666; margin-bottom: 20px;">
+              Configure your authorized tracking credentials from your official <a href="https://portals.aliexpress.com" target="_blank" style="color: var(--ali-red); text-decoration: underline;">AliExpress Portals Account</a>. All outbound clicks automatically append these tracking IDs.
+            </p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Global Affiliate Tracking ID (aff_fcid / sk)</label>
+                <input type="text" id="aff-tracking-id" class="form-control" placeholder="e.g. alimarket_official_2026" />
+                <small style="color: #6B7280; font-size: 11.5px;">Your primary affiliate program identifier.</small>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Default Sub-ID (sub_id)</label>
+                <input type="text" id="aff-sub-id" class="form-control" placeholder="e.g. web_showcase" />
+                <small style="color: #6B7280; font-size: 11.5px;">Sub-tracking parameter to analyze specific campaigns.</small>
+              </div>
+            </div>
+
+            <h4 style="font-size: 14.5px; font-weight: 700; margin: 24px 0 12px; color: #111;">
+              AliExpress Open Platform API (Optional Direct Product Feeds)
+            </h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">App Key</label>
+                <input type="text" id="api-app-key" class="form-control" placeholder="AliExpress Open Platform App Key" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">App Secret</label>
+                <input type="password" id="api-app-secret" class="form-control" placeholder="AliExpress Open Platform App Secret" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">API Tracking ID</label>
+                <input type="text" id="api-tracking-id" class="form-control" placeholder="Tracking ID assigned in Open Platform" />
+              </div>
+            </div>
+
+            <button class="btn-primary-admin" onclick="Admin.saveAffiliateConfig()" style="margin-top: 14px;">
+              <i class="bi bi-check-lg"></i> Save Affiliate Settings
+            </button>
+          </div>
+
+          <!-- DEEPLINK GENERATOR TEST TOOL -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">AliExpress DeepLink Generator & Tester</h3>
+            </div>
+            <p style="font-size: 13px; color: #666; margin-bottom: 16px;">
+              Paste any raw AliExpress product link below to verify how tracking parameters are automatically appended.
+            </p>
+
+            <div class="form-group">
+              <label class="form-label">Original AliExpress Item URL</label>
+              <input type="url" id="test-original-url" class="form-control" placeholder="https://www.aliexpress.com/item/1005001234567.html" />
+            </div>
+
+            <button class="btn-secondary-admin" onclick="Admin.testDeeplinkBuilder()" style="margin-bottom: 14px;">
+              <i class="bi bi-magic"></i> Generate Tracked Affiliate URL
+            </button>
+
+            <div class="form-group">
+              <label class="form-label">Generated Authorized Affiliate URL</label>
+              <input type="text" id="test-output-url" class="form-control" readonly style="background-color: #F9FAFB;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. TAB: HERO BANNERS -->
+        <div class="admin-tab-content" id="tab-banners">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Homepage Promotional Banners</h3>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Slide</th>
+                    <th>Image</th>
+                    <th>Headline & Subtitle</th>
+                    <th>Target Category</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="banners-table-body">
+                  <!-- Populated via Admin.renderBannersTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. TAB: SETTINGS & BACKUP -->
+        <div class="admin-tab-content" id="tab-settings">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Global Site Settings</h3>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Marketplace Name</label>
+                <input type="text" id="setting-site-name" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Currency Code</label>
+                <select id="setting-currency" class="form-control">
+                  <option value="USD">USD ($)</option>
+                  <option value="EUR">EUR (€)</option>
+                  <option value="GBP">GBP (£)</option>
+                  <option value="SAR">SAR (ر.س)</option>
+                  <option value="AED">AED (د.إ)</option>
+                  <option value="DZD">DZD (د.ج)</option>
+                  <option value="MAD">MAD (د.م)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Currency Symbol</label>
+                <input type="text" id="setting-currency-symbol" class="form-control" style="max-width: 120px;" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Storefront Language</label>
+                <select id="setting-default-lang" class="form-control">
+                  <option value="ar" selected>العربية (Arabic - RTL)</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Affiliate Transparency & Disclaimer Text</label>
+              <textarea id="setting-disclosure" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group" style="max-width: 320px;">
+              <label class="form-label">Update Admin Password / PIN</label>
+              <input type="password" id="setting-admin-pin" class="form-control" placeholder="New PIN (min 4 chars)" />
+            </div>
+
+            <button class="btn-primary-admin" onclick="Admin.saveSiteSettings()" style="margin-top: 10px;">
+              <i class="bi bi-save"></i> Save Settings
+            </button>
+          </div>
+
+          <!-- CATALOG BACKUP & RESET -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title">Catalog Backup, Import & Reset</h3>
+            </div>
+            <p style="font-size: 13px; color: #666; margin-bottom: 20px;">
+              Export your catalog to a portable JSON backup file, import products in bulk, or restore default AliExpress demo products at any time.
+            </p>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button class="btn-secondary-admin" onclick="Admin.exportCatalog()">
+                <i class="bi bi-download"></i> Export Catalog (JSON)
+              </button>
+
+              <label class="btn-secondary-admin" style="cursor: pointer; margin: 0;">
+                <i class="bi bi-upload"></i> Import Catalog JSON
+                <input type="file" accept=".json" style="display: none;" onchange="Admin.importCatalogFile(event)" />
+              </label>
+
+              <button class="btn-icon-action delete" style="width: auto; padding: 8px 16px; gap: 6px; border-radius: 6px;" onclick="Admin.resetDemoCatalog()">
+                <i class="bi bi-arrow-counterclockwise"></i> Reset to Default Demo Data
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- PRODUCT ADD/EDIT MODAL -->
+  <div class="admin-modal-backdrop" id="admin-product-modal">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3 style="font-size: 16px; font-weight: 700;" id="modal-product-title">Product Details</h3>
+        <button style="background: none; border: none; font-size: 22px; cursor: pointer;" onclick="Admin.closeProductModal()">&times;</button>
+      </div>
+
+      <div class="admin-modal-body">
+        <div class="form-grid">
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label class="form-label">Product Title (العربية - Arabic) *</label>
+            <input type="text" id="prod-name-ar" class="form-control" placeholder="اسم المنتج باللغة العربية" />
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label class="form-label">Product Title (English)</label>
+            <input type="text" id="prod-name-en" class="form-control" placeholder="e.g. Lenovo Thinkplus TWS Earbuds" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Category *</label>
+            <select id="prod-category" class="form-control"></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Tracked Price ($) *</label>
+            <input type="number" step="0.01" id="prod-price" class="form-control" placeholder="19.99" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Original Strikethrough Price ($)</label>
+            <input type="number" step="0.01" id="prod-orig-price" class="form-control" placeholder="39.99" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Discount %</label>
+            <input type="number" id="prod-discount" class="form-control" placeholder="50" />
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label class="form-label">AliExpress Affiliate URL *</label>
+            <input type="url" id="prod-affiliate-url" class="form-control" placeholder="https://s.click.aliexpress.com/e/_DBExample" />
+            <small style="color: #666; font-size: 11.5px;">Your authorized AliExpress affiliate link from Portals.</small>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label class="form-label">Product Image URL or Upload File</label>
+            <input type="text" id="prod-image-url" class="form-control" placeholder="https://... image link" />
+            <div style="margin-top: 8px;">
+              <input type="file" id="prod-image-file" accept="image/*" class="form-control" />
+            </div>
+            <div class="image-preview-container">
+              <span style="font-size: 12px; color: #666;">Preview:</span>
+              <img id="prod-image-preview" src="" class="preview-thumb" />
+            </div>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label class="form-label">Product Description</label>
+            <textarea id="prod-desc" class="form-control" placeholder="Detailed product highlights..."></textarea>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1; display: flex; flex-direction: row; gap: 20px;">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" id="prod-choice" checked />
+              <span>AliExpress Choice Badge</span>
+            </label>
+
+            <label class="filter-checkbox-item">
+              <input type="checkbox" id="prod-free-shipping" checked />
+              <span>Free Shipping Included</span>
+            </label>
+
+            <label class="filter-checkbox-item">
+              <input type="checkbox" id="prod-featured" />
+              <span>Featured on Homepage</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-modal-footer">
+        <button class="btn-secondary-admin" onclick="Admin.closeProductModal()">Cancel</button>
+        <button class="btn-primary-admin" onclick="Admin.saveProductForm()">Save Product</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY ADD/EDIT MODAL -->
+  <div class="admin-modal-backdrop" id="admin-category-modal">
+    <div class="admin-modal" style="max-width: 500px;">
+      <div class="admin-modal-header">
+        <h3 style="font-size: 16px; font-weight: 700;" id="modal-category-title">Category Details</h3>
+        <button style="background: none; border: none; font-size: 22px; cursor: pointer;" onclick="Admin.closeCategoryModal()">&times;</button>
+      </div>
+
+      <div class="admin-modal-body">
+        <div class="form-group">
+          <label class="form-label">Category Name (العربية - Arabic) *</label>
+          <input type="text" id="cat-name-ar" class="form-control" placeholder="اسم القسم بالعربية" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Category Name (English)</label>
+          <input type="text" id="cat-name-en" class="form-control" placeholder="Category Name in English" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Bootstrap Icon Name</label>
+          <input type="text" id="cat-icon" class="form-control" placeholder="e.g. bi-cpu, bi-phone, bi-watch" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Slug ID</label>
+          <input type="text" id="cat-slug" class="form-control" placeholder="e.g. smart-watches" />
+        </div>
+      </div>
+
+      <div class="admin-modal-footer">
+        <button class="btn-secondary-admin" onclick="Admin.closeCategoryModal()">Cancel</button>
+        <button class="btn-primary-admin" onclick="Admin.saveCategoryForm()">Save Category</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/importer.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

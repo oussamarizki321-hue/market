@@ -1,0 +1,22 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs><radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFF"/><stop offset="100%" stop-color="#E2E7ED"/></radialGradient></defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <ellipse cx="300" cy="480" rx="190" ry="24" fill="#000" opacity="0.14" filter="blur(8px)"/>
+  <g transform="translate(120, 150)">
+    <!-- Sole Lug Rubber -->
+    <path d="M 40 220 L 340 220 L 330 250 L 30 250 Z" fill="#212121"/>
+    <!-- Deep Grip Ridges -->
+    <rect x="50" y="245" width="20" height="15" fill="#FF9800"/>
+    <rect x="90" y="245" width="20" height="15" fill="#FF9800"/>
+    <rect x="130" y="245" width="20" height="15" fill="#FF9800"/>
+    <rect x="170" y="245" width="20" height="15" fill="#FF9800"/>
+    <!-- Suede Leather Boot Upper -->
+    <path d="M 80 60 L 160 60 L 190 140 L 310 180 Q 340 200 320 220 L 40 220 L 40 120 Z" fill="#795548"/>
+    <!-- Ankle Support Collar -->
+    <rect x="80" y="60" width="80" height="30" rx="6" fill="#3E2723"/>
+    <!-- Yellow Lacing D-Rings -->
+    <circle cx="165" cy="110" r="5" fill="#FFC107"/>
+    <circle cx="175" cy="130" r="5" fill="#FFC107"/>
+    <circle cx="185" cy="150" r="5" fill="#FFC107"/>
+  </g>
+</svg>

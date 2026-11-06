@@ -1,0 +1,26 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="80%" stop-color="#F3F5F7"/><stop offset="100%" stop-color="#E2E7ED"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#000" flood-opacity="0.18"/></filter>
+    <linearGradient id="body" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3A3F47"/><stop offset="100%" stop-color="#1E2126"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(30, 30)"><rect width="90" height="26" rx="4" fill="#E60000"/><text x="45" y="18" fill="#FFF" font-family="Arial" font-weight="900" font-size="13" text-anchor="middle">Choice</text></g>
+  <g transform="translate(400, 30)"><rect width="170" height="26" rx="13" fill="#EEF2F6" stroke="#D0D7DE"/><text x="485" y="17" fill="#24292F" font-family="Arial" font-weight="700" font-size="11" text-anchor="middle">10000mAh â€¢ 20W MagSafe</text></g>
+  <ellipse cx="300" cy="490" rx="140" ry="22" fill="#000" opacity="0.15" filter="blur(8px)"/>
+  <g filter="url(#shadow)" transform="translate(190, 130)">
+    <!-- Main Power Bank Body -->
+    <rect x="0" y="0" width="220" height="330" rx="34" fill="url(#body)"/>
+    <!-- MagSafe Ring Indicator -->
+    <circle cx="110" cy="150" r="65" fill="none" stroke="#6C7582" stroke-width="6" stroke-dasharray="14 8"/>
+    <circle cx="110" cy="150" r="16" fill="none" stroke="#6C7582" stroke-width="4"/>
+    <rect x="107" y="222" width="6" height="22" rx="3" fill="#6C7582"/>
+    <!-- Wireless Charging Lightning Icon -->
+    <path d="M 112 135 L 104 150 L 110 150 L 108 165 L 116 150 L 110 150 Z" fill="#00F0FF"/>
+    <!-- LED Battery Display -->
+    <rect x="70" y="270" width="80" height="30" rx="8" fill="#0D0F12" stroke="#2D333B"/>
+    <text x="110" y="291" fill="#00FF88" font-family="monospace" font-weight="900" font-size="18" text-anchor="middle">100%</text>
+    <!-- Brand -->
+    <text x="110" y="42" fill="#8C939E" font-family="Arial" font-weight="900" font-size="13" letter-spacing="3" text-anchor="middle">BASEUS</text>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="80%" stop-color="#F5F3F7"/><stop offset="100%" stop-color="#E5E1EC"/></radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="15" flood-color="#000" flood-opacity="0.18"/></filter>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A4E69"/><stop offset="100%" stop-color="#22223B"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g transform="translate(30, 30)"><rect width="90" height="26" rx="4" fill="#E60000"/><text x="45" y="18" fill="#FFF" font-family="Arial" font-weight="900" font-size="13" text-anchor="middle">Choice</text></g>
+  <g transform="translate(420, 30)"><rect width="150" height="26" rx="13" fill="#F3E5F5" stroke="#CE93D8"/><text x="495" y="17" fill="#6A1B9A" font-family="Arial" font-weight="700" font-size="11" text-anchor="middle">110,000 RPM â€¢ 200M Ions</text></g>
+  <ellipse cx="300" cy="510" rx="150" ry="22" fill="#000" opacity="0.14" filter="blur(8px)"/>
+  <g filter="url(#shadow)" transform="translate(180, 130)">
+    <!-- Hair Dryer Barrel Cylinder -->
+    <rect x="0" y="30" width="180" height="95" rx="47" fill="url(#metal)"/>
+    <!-- Magnetic Air Styling Nozzle -->
+    <path d="M 0 45 L -35 55 L -35 100 L 0 110 Z" fill="#1A1C23"/>
+    <!-- LED Glow Ring on Back (Temperature indicator) -->
+    <circle cx="165" cy="77" r="36" fill="none" stroke="#FF4081" stroke-width="8"/>
+    <circle cx="165" cy="77" r="28" fill="#121318"/>
+    <!-- Ergonomic Long Handle -->
+    <rect x="80" y="120" width="45" height="240" rx="22" fill="url(#metal)"/>
+    <!-- Control Buttons on Handle -->
+    <circle cx="102" cy="160" r="9" fill="#1A1C23" stroke="#9A8C98"/>
+    <rect x="94" y="195" width="16" height="30" rx="8" fill="#1A1C23" stroke="#9A8C98"/>
+    <!-- High Speed Air Streams -->
+    <path d="M -50 65 L -110 50" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M -55 77 L -130 77" stroke="#00E5FF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -50 90 L -110 105" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
